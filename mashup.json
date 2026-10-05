@@ -3,6 +3,12 @@
   "version": "0.6.2",
   "name": "ValCraft",
   "tagline": "Play Valheim as a Minecraft player: Minecraft runs alongside and drives movement, inventory, blocks and combat inside Valheim's world (BepInEx plugin + Fabric mod).",
+  "how_to_play": [
+    "Play Valheim's world as a Minecraft player: Minecraft's movement, blocks, inventory and combat inside Valheim.",
+    "Use Minecraft's keys as usual; G is Valheim use (doors, chests, portals, beds), Esc and M Valheim menu and map, O Minecraft options.",
+    "F7 hands controls back to Valheim and back; F8 turns Valheim's ground into real Minecraft blocks on or off.",
+    "Press Play: Minecraft starts first (keep its window open), then Valheim. Load a world and Minecraft links up."
+  ],
   "kind": "passthrough",
   "games": [
     {
