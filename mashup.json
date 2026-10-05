@@ -4,10 +4,11 @@
   "name": "ValCraft",
   "tagline": "Play Valheim as a Minecraft player: Minecraft runs alongside and drives movement, inventory, blocks and combat inside Valheim's world (BepInEx plugin + Fabric mod).",
   "how_to_play": [
-    "Play Valheim's world as a Minecraft player: Minecraft's movement, blocks, inventory and combat inside Valheim.",
-    "Use Minecraft's keys as usual; G is Valheim use (doors, chests, portals, beds), Esc and M Valheim menu and map, O Minecraft options.",
-    "F7 hands controls back to Valheim and back; F8 turns Valheim's ground into real Minecraft blocks on or off.",
-    "Press Play: Minecraft starts first (keep its window open), then Valheim. Load a world and Minecraft links up."
+    "Play Valheim's world as a Minecraft player: Minecraft's movement, hands, blocks, inventory and combat inside Valheim's terrain, weather and creatures.",
+    "Press Play: Minecraft starts first (keep its window open, minimise it), then Valheim through Steam.",
+    "Load a Valheim world: Minecraft links up and drives your character; if Valheim had to wait it says \"ValCraft: Minecraft is ready\".",
+    "Minecraft's own keys as usual; G = Valheim use (doors, chests, portals, beds), Esc / M = Valheim menu / map, O = Minecraft options.",
+    "F7 hands controls back to Valheim and back; F8 turns Valheim's ground into real Minecraft blocks on/off."
   ],
   "kind": "passthrough",
   "games": [
@@ -329,9 +330,6 @@
   "status": "beta",
   "issues": "https://github.com/LoAlCo/ValCraft/issues",
   "notes": [
-    "How it works: you play Valheim's world as a Minecraft player: Minecraft runs alongside and its movement, hands, blocks, inventory and combat are drawn inside Valheim's terrain, weather and creatures.",
-    "Press Play: Minecraft starts first (keep its window open, minimise it), then Valheim through Steam. Load a Valheim world: Minecraft links up and drives your character; if Valheim had to wait it says \"ValCraft: Minecraft is ready\".",
-    "Keys: Minecraft's own keys as usual; G = Valheim use (doors, chests, portals, beds), Esc / M = Valheim menu / map, O = Minecraft options, F7 = hand controls back to Valheim and back, F8 = Valheim's ground as real Minecraft blocks on/off.",
     "You need Valheim on Steam (Windows) and Minecraft: Java Edition, plus about 3 GB of free RAM: both games run at once. BepInEx for Valheim and ValCraft are installed into the Valheim folder for you; Restore removes them.",
     "Beta, experimental upstream: no Nether/End portals, some items missing, you can slip through steep crater floors. Multiplayer is experimental: the first ValCraft player hosts the shared Minecraft world (Windows may ask once to let Java through the firewall).",
     "Report bugs to the author (LoAlCo) on the upstream issue tracker."
