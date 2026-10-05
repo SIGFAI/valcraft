@@ -1,0 +1,333 @@
+{
+  "id": "sigf/valcraft",
+  "version": "0.6.2",
+  "name": "ValCraft",
+  "tagline": "Play Valheim as a Minecraft player: Minecraft runs alongside and drives movement, inventory, blocks and combat inside Valheim's world (BepInEx plugin + Fabric mod).",
+  "kind": "passthrough",
+  "games": [
+    {
+      "game": "valheim",
+      "role": "host",
+      "label": "Valheim",
+      "engine": "Valheim (Unity, Mono) + BepInEx 5 plugin ValCraft (C#)",
+      "apps": {
+        "steam": "892970"
+      },
+      "runtime": "current Steam build (upstream pins none)"
+    },
+    {
+      "game": "minecraft",
+      "role": "guest",
+      "label": "Minecraft",
+      "mc": "26.3",
+      "loader": "fabric@0.19.5",
+      "java": "25"
+    }
+  ],
+  "requires": [
+    {
+      "id": "bepinexpack-valheim",
+      "version": "5.4.2350",
+      "license": "LGPL-2.1 (BepInEx 5.4.23.5) + MIT (Valheim changes, Harmony, MonoMod, Mono.Cecil), shipped unchanged",
+      "page": "https://thunderstore.io/c/valheim/p/denikson/BepInExPack_Valheim/",
+      "note": "the Valheim build of BepInEx that ValCraft depends on; installed into the game folder by the app",
+      "source": {
+        "url": "https://github.com/SIGFAI/valcraft/releases/download/v0.6.2/denikson-BepInExPack_Valheim-5.4.2350.zip",
+        "sha256": "37a91c000b4e88f2ed7a4bd7d812239852d2e36cbf0ff0a9f5faacfba46b105f"
+      }
+    },
+    {
+      "id": "fabric-loader",
+      "version": "0.19.5"
+    },
+    {
+      "id": "fabric-api",
+      "version": "0.161.0+26.3",
+      "note": "in the Minecraft pack (downloaded from Modrinth)"
+    }
+  ],
+  "install": [
+    {
+      "game": "valheim",
+      "strategy": "game-dir-snapshot",
+      "loader": "bepinex",
+      "files": [
+        {
+          "src": "denikson-BepInExPack_Valheim-5.4.2350.zip",
+          "dst": "{game}",
+          "root": "BepInExPack_Valheim",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "BepInExPack_Valheim/.doorstop_version",
+              "sha256": "84fa42545c0993edf8a5559d2a0772260f85f4a7ed29ec75e6590be64ed98067"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/config/BepInEx.cfg",
+              "sha256": "3d460196bb8f993fc71048efc6d1bbc21b5364eefac778df61955138c83cc677"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/0Harmony.dll",
+              "sha256": "1a21cc03424fc82c3dd1346905d16494536b9595ae4162228d99fb7c285c1031"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/0Harmony.xml",
+              "sha256": "d1f02fc3ada3a13da307de421225bfe56ebe24064370980979391c4be021672f"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/0Harmony20.dll",
+              "sha256": "5708451a91eaecee71a49b1881fb081ee22142e11de04e8575f4f6832fa16d0e"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/BepInEx.dll",
+              "sha256": "f09821b2a7b990c6f50c5ef23229635303ce675374b70edc6f5a9b960cb818e3"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/BepInEx.Harmony.dll",
+              "sha256": "2f0270073e307095ce980f578bfc9489f7ac98d360b9d41f77370a84c33edd7a"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/BepInEx.Harmony.xml",
+              "sha256": "a04fedf08f7c81f5d01aba6f2840a7ffce50b79bbd24587d8dbe69ab73971d29"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/BepInEx.Preloader.dll",
+              "sha256": "fb21bf85c462bc5376435eccfed23f07a36baa94f770ff35cd567e17d2997c8d"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/BepInEx.Preloader.xml",
+              "sha256": "ab433415cb8f006f683c0c193d140b92f0244568e6e443d53a5c4c18a632dc98"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/BepInEx.xml",
+              "sha256": "65b9d6e40c8645e04cf1cf6342c2812f52766f2d0fc1b5736b03f17fb23df11e"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/HarmonyXInterop.dll",
+              "sha256": "dac1b52655f03ba00773eb63894bfd0da4d4df6d47041a64cfd4b1da757371ba"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/Mono.Cecil.dll",
+              "sha256": "7ae470288fff4a402899c254d0a76cefef55877f5c54f96e83c797cc5bb6e2f6"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/Mono.Cecil.Mdb.dll",
+              "sha256": "5896d1898f616701fff18f3b2c71e6b844d2390ef9f41e1c5fccce8cb27c698e"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/Mono.Cecil.Pdb.dll",
+              "sha256": "174db44a067f58561510af746f3caeb032037762c57a31c8d9ee32db25174984"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/Mono.Cecil.Rocks.dll",
+              "sha256": "54ac539fb5ddc8b44c0e9acd0fcb7324f89d1a072edf8ebc1b06dd691e3d3927"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/MonoMod.RuntimeDetour.dll",
+              "sha256": "40e49bb314391cd7bddc2644f8553eeba92c194b940836b103df16955c464e0c"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/MonoMod.RuntimeDetour.xml",
+              "sha256": "54887808960d156550b37d602d08847607aa9e908d039f2765fb0b5e79394aa4"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/MonoMod.Utils.dll",
+              "sha256": "9d1495f147ac93c4f81f84538c1a326e8f8a6aefc78d6289d798f3ce1162c5e9"
+            },
+            {
+              "path": "BepInExPack_Valheim/BepInEx/core/MonoMod.Utils.xml",
+              "sha256": "0577b362023a3432d6e8d7934c5eddc3e08fdbb19e191af083e341562c5ede38"
+            },
+            {
+              "path": "BepInExPack_Valheim/changelog.txt",
+              "sha256": "d75b7488bc666df9254667226a58f100392058520f3eafdb1368e49e42057530"
+            },
+            {
+              "path": "BepInExPack_Valheim/doorstop_config.ini",
+              "sha256": "4d5c6dfa0f771c6a5b1b0c559aca0bd0ece7d08b08fff894708dc3b73ce73cfc"
+            },
+            {
+              "path": "BepInExPack_Valheim/doorstop_libs/libdoorstop_x64.dylib",
+              "sha256": "fb8e066b0de1e74341eeeb768157514df51a531311f2fcbc334168bb2a85bb1a"
+            },
+            {
+              "path": "BepInExPack_Valheim/doorstop_libs/libdoorstop_x64.so",
+              "sha256": "f1948c4f21bd92fa9fffb1ebe39d6e1db926674a5d1b2e1879b2ccd50443f8d4"
+            },
+            {
+              "path": "BepInExPack_Valheim/start_game_bepinex.sh",
+              "sha256": "8e2159eaf2f8f44f6861af4b6fb5a852d72865e8bbafc700da99dd1084cdc323"
+            },
+            {
+              "path": "BepInExPack_Valheim/start_server_bepinex.sh",
+              "sha256": "ce627a9c2865a992bdf95d20f42636d0784c07afe39f49068d78b22103cdbe18"
+            },
+            {
+              "path": "BepInExPack_Valheim/winhttp.dll",
+              "sha256": "93406d0a02e7c164b89828cbfe3b289930a112d2eca50bd4a52e72ece169e6a8"
+            },
+            {
+              "path": "CHANGELOG.md",
+              "sha256": "931149ae0ac67a443f6f6081e499357fb8a0166b1879daea0c9769f515bc3738"
+            },
+            {
+              "path": "icon.png",
+              "sha256": "d674921f6262ccfb403c414f31f1e147110da04446674cc985fe4e5cff1b14d6"
+            },
+            {
+              "path": "manifest.json",
+              "sha256": "47007fbb75fe07d6676c11043563516b23f0ea78b23de3b1dc8ec4900273e38f"
+            },
+            {
+              "path": "README.md",
+              "sha256": "0ff0b0d60ffc54defd6485e3a5444a48be8f101d4876153a88ba509e2f1fedb6"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/valcraft/releases/download/v0.6.2/denikson-BepInExPack_Valheim-5.4.2350.zip",
+          "sha256": "37a91c000b4e88f2ed7a4bd7d812239852d2e36cbf0ff0a9f5faacfba46b105f",
+          "size": 706129
+        },
+        {
+          "src": "LoAlCo-ValCraft-0.6.2.zip",
+          "dst": "{game}/BepInEx/plugins",
+          "root": "plugins",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "README.md",
+              "sha256": "100695b766a84ab726411e93fdd14981d9a7ff1e68548a2bcca6ffe12c2c8bba"
+            },
+            {
+              "path": "icon.png",
+              "sha256": "99c3ec67031630db35fb75f611bb78263ff407bb46493fc15986ef89badebec1"
+            },
+            {
+              "path": "manifest.json",
+              "sha256": "6710fe0a4de201393964abe9227484a416cd5e753487c1d65227434c00bec0ab"
+            },
+            {
+              "path": "plugins/ValCraft/NOTICE.md",
+              "sha256": "3310052ba21b0b68484a3d7b0fc30f496388aa4a53ffcf400d43917b5102e268"
+            },
+            {
+              "path": "plugins/ValCraft/ValCraft-Minecraft.zip",
+              "sha256": "f1ee5274ffd7d0a59666aa8ee542733a41c90c82435d37ae51aceb7a4c518d92"
+            },
+            {
+              "path": "plugins/ValCraft/ValCraft.dll",
+              "sha256": "f0fdf3725bdb29a14ef57d0bb001efa59afdb4f98a229e45566a394f01303974"
+            }
+          ],
+          "url": "https://github.com/LoAlCo/ValCraft/releases/download/v0.6.2/LoAlCo-ValCraft-0.6.2.zip",
+          "sha256": "b57a0b85c848e57e249dcbeecd03d52cc054286eaf2a32f415e4e32a51a38445",
+          "size": 24981746
+        },
+        {
+          "src": "valcraft-sigf-config.zip",
+          "dst": "{game}",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "BepInEx/config/loalco.valcraft.cfg",
+              "sha256": "e9596d97d6d295d8ea9619b7f4e8c08c037b9d965c0e87a90d384edec87a21ea"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/valcraft/releases/download/v0.6.2/valcraft-sigf-config.zip",
+          "sha256": "9da08c63be50a405cfae18b42ef196e549829a6da4c9ca3b65b571af6ffdbc13",
+          "size": 419
+        }
+      ]
+    },
+    {
+      "game": "minecraft",
+      "strategy": "mrpack",
+      "pack": {
+        "src": "valcraft.mrpack",
+        "url": "https://github.com/SIGFAI/valcraft/releases/download/v0.6.2/valcraft.mrpack",
+        "sha256": "23ce409a5c8ec8a0d01ecfbbd781638fd4bc537b28c3e7d83f942bb506399fcf",
+        "size": 9199
+      }
+    }
+  ],
+  "launch": [
+    {
+      "game": "minecraft"
+    },
+    {
+      "game": "valheim",
+      "args": []
+    }
+  ],
+  "files": [
+    {
+      "name": "denikson-BepInExPack_Valheim-5.4.2350.zip",
+      "url": "https://github.com/SIGFAI/valcraft/releases/download/v0.6.2/denikson-BepInExPack_Valheim-5.4.2350.zip",
+      "sha256": "37a91c000b4e88f2ed7a4bd7d812239852d2e36cbf0ff0a9f5faacfba46b105f",
+      "size": 706129
+    },
+    {
+      "name": "LoAlCo-ValCraft-0.6.2.zip",
+      "url": "https://github.com/LoAlCo/ValCraft/releases/download/v0.6.2/LoAlCo-ValCraft-0.6.2.zip",
+      "sha256": "b57a0b85c848e57e249dcbeecd03d52cc054286eaf2a32f415e4e32a51a38445",
+      "size": 24981746
+    },
+    {
+      "name": "valcraft-sigf-config.zip",
+      "url": "https://github.com/SIGFAI/valcraft/releases/download/v0.6.2/valcraft-sigf-config.zip",
+      "sha256": "9da08c63be50a405cfae18b42ef196e549829a6da4c9ca3b65b571af6ffdbc13",
+      "size": 419
+    },
+    {
+      "name": "valcraft.mrpack",
+      "url": "https://github.com/SIGFAI/valcraft/releases/download/v0.6.2/valcraft.mrpack",
+      "sha256": "23ce409a5c8ec8a0d01ecfbbd781638fd4bc537b28c3e7d83f942bb506399fcf",
+      "size": 9199
+    }
+  ],
+  "source": {
+    "repo": "https://github.com/LoAlCo/ValCraft",
+    "license": "No license (upstream) + LGPL-2.1, MIT",
+    "upstream_license": null,
+    "fetch": "upstream",
+    "tag": "v0.6.2",
+    "commit": "cf1b4fcfc34fb5231762296a99be936b1b065505",
+    "hosted": "https://github.com/SIGFAI/valcraft",
+    "based_on": "https://github.com/chasmlol/SkyCraft",
+    "bundled": [
+      {
+        "name": "BepInExPack_Valheim",
+        "version": "5.4.2350",
+        "repo": "https://github.com/AzumattDev/BepInEx",
+        "commit": "ef506e0a6bb98c49d85b7927b5ab625605826be0",
+        "license": "LGPL-2.1 (BepInEx 5.4.23.5) + MIT (Valheim changes, Harmony, MonoMod, Mono.Cecil)"
+      },
+      {
+        "name": "valcraft-sigf-icons (resource pack, original icons)",
+        "version": "0.6.2",
+        "repo": "https://github.com/SIGFAI/valcraft",
+        "license": "MIT"
+      }
+    ]
+  },
+  "media": {},
+  "built_by": {
+    "author": "LoAlCo",
+    "authors": [
+      "LoAlCo",
+      "chasmlol"
+    ],
+    "packaged_by": "SIGF"
+  },
+  "idea_by": "LoAlCo",
+  "built_at": "2026-10-05T00:00:00.000Z",
+  "status": "beta",
+  "issues": "https://github.com/LoAlCo/ValCraft/issues",
+  "notes": [
+    "You need Valheim on Steam (Windows) and Minecraft: Java Edition. About 3 GB of extra RAM: both games run at once.",
+    "Press Play: Minecraft starts first as the app's own Prism instance \"sigf-valcraft\" (ValCraft's Fabric mod, Minecraft 26.3, Java 25), then Valheim. Minecraft's window stays visible (minimise it); load a Valheim world and Minecraft links up and drives your character.",
+    "BepInExPack_Valheim 5.4.2350, ValCraft 0.6.2 and a ValCraft setting are installed into the Valheim folder, ValCraft downloaded from the author's own release; Restore removes them. The setting (StartWithValheim = false) stops the plugin from starting a second Minecraft of its own.",
+    "The valcraft-sigf-icons resource pack is on by default: original SIGF icons for ValCraft's boss items and trophies (Options > Resource Packs).",
+    "Multiplayer is experimental upstream (0.6.2): the first ValCraft player opens their Minecraft world through the e4mc relay and the link goes to the others over Valheim. Windows asks once to let Java through the firewall.",
+    "Beta, experimental upstream: known gaps include no Nether/End portals, some items missing and falling through craters. Report bugs to the author on the upstream issue tracker."
+  ]
+}
