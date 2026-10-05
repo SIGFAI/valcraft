@@ -323,11 +323,11 @@
   "status": "beta",
   "issues": "https://github.com/LoAlCo/ValCraft/issues",
   "notes": [
-    "You need Valheim on Steam (Windows) and Minecraft: Java Edition. About 3 GB of extra RAM: both games run at once.",
-    "Press Play: Minecraft starts first as the app's own Prism instance \"sigf-valcraft\" (ValCraft's Fabric mod, Minecraft 26.3, Java 25), then Valheim. Minecraft's window stays visible (minimise it); load a Valheim world and Minecraft links up and drives your character.",
-    "BepInExPack_Valheim 5.4.2350, ValCraft 0.6.2 and a ValCraft setting are installed into the Valheim folder, ValCraft downloaded from the author's own release; Restore removes them. The setting (StartWithValheim = false) stops the plugin from starting a second Minecraft of its own.",
-    "The valcraft-sigf-icons resource pack is on by default: original SIGF icons for ValCraft's boss items and trophies (Options > Resource Packs).",
-    "Multiplayer is experimental upstream (0.6.2): the first ValCraft player opens their Minecraft world through the e4mc relay and the link goes to the others over Valheim. Windows asks once to let Java through the firewall.",
-    "Beta, experimental upstream: known gaps include no Nether/End portals, some items missing and falling through craters. Report bugs to the author on the upstream issue tracker."
+    "How it works: you play Valheim's world as a Minecraft player: Minecraft runs alongside and its movement, hands, blocks, inventory and combat are drawn inside Valheim's terrain, weather and creatures.",
+    "Press Play: Minecraft starts first (keep its window open, minimise it), then Valheim through Steam. Load a Valheim world: Minecraft links up and drives your character; if Valheim had to wait it says \"ValCraft: Minecraft is ready\".",
+    "Keys: Minecraft's own keys as usual; G = Valheim use (doors, chests, portals, beds), Esc / M = Valheim menu / map, O = Minecraft options, F7 = hand controls back to Valheim and back, F8 = Valheim's ground as real Minecraft blocks on/off.",
+    "You need Valheim on Steam (Windows) and Minecraft: Java Edition, plus about 3 GB of free RAM: both games run at once. BepInEx for Valheim and ValCraft are installed into the Valheim folder for you; Restore removes them.",
+    "Beta, experimental upstream: no Nether/End portals, some items missing, you can slip through steep crater floors. Multiplayer is experimental: the first ValCraft player hosts the shared Minecraft world (Windows may ask once to let Java through the firewall).",
+    "Report bugs to the author (LoAlCo) on the upstream issue tracker."
   ]
 }
