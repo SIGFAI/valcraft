@@ -332,6 +332,7 @@
   "notes": [
     "You need Valheim on Steam (Windows) and Minecraft: Java Edition, plus about 3 GB of free RAM: both games run at once. BepInEx for Valheim and ValCraft are installed into the Valheim folder for you; Restore removes them.",
     "Beta, experimental upstream: no Nether/End portals, some items missing, you can slip through steep crater floors. Multiplayer is experimental: the first ValCraft player hosts the shared Minecraft world (Windows may ask once to let Java through the firewall).",
-    "Report bugs to the author (LoAlCo) on the upstream issue tracker."
+    "Report bugs to the author (LoAlCo) on the upstream issue tracker.",
+    "No free SIGF server for this mashup: Valheim picks one ValCraft player to host the shared Minecraft world, and its terrain comes from that player's Valheim."
   ]
 }
